@@ -1,1 +1,1 @@
-See it in action here: https://github.com/dcubic/faq-accordion/
+See it in action here: https://dcubic.github.io/faq-accordion/
