@@ -1,17 +1,18 @@
 @font-face {
-    font-family: 'WorkSans';
-    src: url('./assets/fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
+  font-family: "WorkSans";
+  src: url("./assets/fonts/WorkSans-VariableFont_wght.ttf") format("truetype");
 }
 
 :root {
-    --light-pink: hsl(275, 100%, 97%);
-    --grayish-purple: hsl(292, 16%, 49%);
-    --dark-purple: hsl(292, 42%, 14%);
+  --light-pink: hsl(275, 100%, 97%);
+  --grayish-purple: hsl(292, 16%, 49%);
+  --dark-purple: hsl(292, 42%, 14%);
+  --bright-purple: #b024e7;
 
-    font-size: 16px;
-    font-family: 'WorkSans';
+  font-size: 16px;
+  font-family: "WorkSans";
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }

@@ -1,25 +1,33 @@
-import { style } from "./Information.module.css";
+import styles from "./Information.module.css";
 import plusIcon from "../assets/images/icon-plus.svg";
 import minusIcon from "../assets/images/icon-minus.svg";
 
-function Information({ question, answer, key, enabledState, setEnabledState }) {
+function Information({
+  question,
+  answer,
+  index,
+  enabledState,
+  setEnabledState,
+}) {
   function handleClick() {
     const modifiedState = [...enabledState];
-    modifiedState[key] = !modifiedState[key];
+    modifiedState[index] = !modifiedState[index];
     setEnabledState(modifiedState);
   }
 
   return (
     <div>
-      <div className={style.questionSelector}>
-        <h2 className={style.question}>{question}</h2>
-        {enabledState[key] ? (
+      <div className={styles.questionSelector} onClick={() => handleClick()}>
+        <h2 className={styles.question}>{question}</h2>
+        {enabledState[index] ? (
           <img src={minusIcon}></img>
         ) : (
           <img src={plusIcon}></img>
         )}
       </div>
-      {enabledState[key] ? <p className={style.answer}>{answer}</p> : <></>}
+      {enabledState[index] ? <p className={styles.answer}>{answer}</p> : <></>}
     </div>
   );
 }
+
+export default Information;

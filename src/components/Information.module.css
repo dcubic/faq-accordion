@@ -1,0 +1,31 @@
+.questionSelector {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.questionSelector:hover {
+    cursor: pointer;
+}
+
+.questionSelector:hover .question {
+    color: var(--bright-purple);
+    opacity: 1;
+}
+
+.question {
+  color: var(--dark-purple);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.answer {
+  color: var(--dark-purple);
+  opacity: 0.5;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}

@@ -1,11 +1,11 @@
 import { useState } from "react";
 import styles from "./App.module.css";
+import Information from "./components/Information.jsx";
 
-import starIcon from "./assets/images/icon-star.svg"
+import starIcon from "./assets/images/icon-star.svg";
 import mobileBackgroundPattern from "./assets/images/background-pattern-mobile.svg";
 
 function App() {
-  console.log("App is being rendered");
   const questionsAndAnswers = [
     {
       question: `What is Frontend Mentor, and how will it help me?`,
@@ -29,36 +29,31 @@ function App() {
       channel where you can ask questions and seek support from other community members.`,
     },
   ];
-  console.log("Were the questionsAndAnswers well");
   const isEnabled = new Array(questionsAndAnswers.length).fill(false);
   const [enabledState, setEnabledState] = useState(isEnabled);
-  console.log("Do we make it here?");
   return (
-    <div className={styles.colouredBackground}>
-      <img
-        src={mobileBackgroundPattern}
-        className={styles.backgroundImage}
-      ></img>
+    <>
+      <div className={styles.colouredBackground}></div>
+      <div className={styles.backgroundImage}></div>
       <div className={styles.faqContainer}>
         <div className={styles.faqHeader}>
-          <img src={starIcon}></img>
-          <h1>FAQs</h1>
+          <img src={starIcon} className={styles.starIcon}></img>
+          <h1 className={styles.title}>FAQs</h1>
         </div>
-        
-      {/* {questionsAndAnswers.map(({ question, answer }, index) => (
-        <React.Fragment>
-          {index > 0 ? <hr className={styles.divider}></hr> : <></>}
-          <Information
-            question={question}
-            answer={answer}
-            key={index}
-            enabledState={enabledState}
-            setEnabledState={setEnabledState}
-          />
-        </React.Fragment>
-      ))} */}
+        {questionsAndAnswers.map(({ question, answer }, index) => (
+          <>
+            {index > 0 && <hr className={styles.divider} />}
+            <Information
+              question={question}
+              answer={answer}
+              index={index}
+              enabledState={enabledState}
+              setEnabledState={setEnabledState}
+            />
+          </>
+        ))}
       </div>
-    </div>
+    </>
   );
 }
 
