@@ -1,0 +1,15 @@
+.colouredBackground {
+    margin: 0;
+    background-image: url('./assets/images/background-pattern-mobile.svg'), linear-gradient(0deg, red);
+    width: 100vw;
+    height: 100vh;
+}
+
+/* .faqContainer {
+    margin: 0;
+    width: 220px;
+    height: 10px;
+
+    background-color: blue;
+    padding: 0;
+} */

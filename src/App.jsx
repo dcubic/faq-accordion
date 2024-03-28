@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { style } from "./App.module.css";
+import styles from "./App.module.css";
+import mobileBackgroundPattern from "./assets/images/background-pattern-mobile.svg";
 
 function App() {
+  console.log("App is being rendered");
   const questionsAndAnswers = [
     {
       question: `What is Frontend Mentor, and how will it help me?`,
@@ -25,28 +27,32 @@ function App() {
       channel where you can ask questions and seek support from other community members.`,
     },
   ];
+  console.log("Were the questionsAndAnswers well")
   const isEnabled = new Array(questionsAndAnswers.length).fill(false);
   const [enabledState, setEnabledState] = useState(isEnabled);
-  console.log("Do we ever get here?");
+  console.log("Do we make it here?");
   return (
-    <div className={style.colouredBackground}>
-      <div className={style.faqContainer}>
-        <h1>FAQs</h1>
-        {questionsAndAnswers.map(({ question, answer }, index) => (
-          <React.Fragment>
-            {index > 0 ? <hr className={style.divider}></hr> : <></>}
-            <Information
-              question={question}
-              answer={answer}
-              key={index}
-              enabledState={enabledState}
-              setEnabledState={setEnabledState}
-            />
-          </React.Fragment>
-        ))}
-      </div>
+    <div className={styles.colouredBackground}>
+ 
     </div>
   );
 }
 
 export default App;
+
+{/* <div className={styles.faqContainer}>
+<h1>FAQs</h1>
+
+</div> */}
+// {questionsAndAnswers.map(({ question, answer }, index) => (
+//   <React.Fragment>
+//     {index > 0 ? <hr className={style.divider}></hr> : <></>}
+//     <Information
+//       question={question}
+//       answer={answer}
+//       key={index}
+//       enabledState={enabledState}
+//       setEnabledState={setEnabledState}
+//     />
+//   </React.Fragment>
+// ))}
